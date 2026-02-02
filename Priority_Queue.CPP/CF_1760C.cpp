@@ -96,6 +96,11 @@ const int N=200000, M=998244353;
 //..........................................Let's Start with the Grace of Almighty.......................................///
 e4{
     int t;cin>>t;
+
+  // Some Changes
+  int s = 0;
+
+
     while(t--)
     {
       int n; cin>>n;
