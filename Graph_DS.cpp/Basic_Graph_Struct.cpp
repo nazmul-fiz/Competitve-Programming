@@ -1,8 +1,8 @@
              /**************************************************************************************
             *                                                                                     *
             |                                 Nazmul_Fiz                                          |
-            *                                 Date: 28/ 1/ 26                                     *
-            |                      Topic/ Approach: PQ Marathon Contest 2026 
+            *                                 Date: 16/ 2/ 26                                     *
+            |                      Topic/ Approach:  PQ Marathon  Contest 2026 
             **************************************************************************************/ /*
                              Building Instinct to Sort the Life out                              */
 
@@ -24,6 +24,7 @@ typedef tree<int, null_type, less_equal<int>, rb_tree_tag,tree_order_statistics_
 #define     ll                              long long
 #define     ull2                            unsigned long long int
 #define     ui                              unsigned int
+#define     boro                            unsigned __int128
 //STL :
 #define     veci                            vector<int>
 #define     vecb                            vector<bool>
@@ -84,6 +85,7 @@ typedef tree<int, null_type, less_equal<int>, rb_tree_tag,tree_order_statistics_
 #define     endl                            '\n'
 //extras :
 #define     e4                              int main()
+#define     e42                             int128_t
 #define     gcd(a, b)                       __gcd(a, b)
 #define     lcm(a, b)                       (a/gcd(a,b)*b)
 #define     checkmate                       return 0;
@@ -91,48 +93,66 @@ typedef tree<int, null_type, less_equal<int>, rb_tree_tag,tree_order_statistics_
 #define     INF                             LLONG_MAX
 #define     in_range(i,x,y)                 for(int i=x;i<=y;i++)
 #define     in_range_back(i,x,y)            for(int i=y;i>=x;i--)
-const int N=200000, M=998244353; 
- //
-//..........................................Let's Start with the Grace of Almighty.......................................///
+const int   M=998244353; 
+const int   big= 1e6;
+ //..................................Let's Start with the Grace of Almighty.......................................///
+
 e4{
-    int t;cin>>t;
 
-  // Some Changes  //
-  int s = 0;
-
-
-    while(t--)
+    ll n,m;
+    cin>>n>>m;
+    
+    string bus= "bus topology";
+    string ring = "ring topology";
+    string star= "star topology";
+    
+     
+     ll x, y;
+     
+      vecll degree_Cnt(n+1, 0);
+    
+    while(m--)
     {
-      int n; cin>>n;
       
-      vecll v(n);
-      
-      for(int i=0; i<n; i++)
-      {
-        cin>>v[i];
-      }
-       
-      priority_queue<ll> Geeks_Vec;
-      for(int x: v)
-      {
-        Geeks_Vec.push(x);
-      }
-      
-      ll larg= Geeks_Vec.top();
-      Geeks_Vec.pop();
-      ll Sec_larg= Geeks_Vec.top();
-      
-      for(int i=0; i<n; i++)
-      {
-        if(v[i] == larg)
-        {
-          cout<<v[i]- Sec_larg<<" ";
-        }
-        else cout<<v[i]- larg<<" ";
-      }
+      cin>>x>>y;
+      degree_Cnt[x]++;
+      degree_Cnt[y]++;
       
       
-      cout<<endl;
     }
+    ll ekbar=0, duibar=0, root_connected=0;
+    
+    for(int i=1; i<=n ; i++)
+    {
+      if(degree_Cnt[i] == 1)
+      {
+        ekbar++;
+      }
+      else if(degree_Cnt[i]==2)
+      {
+        duibar++;
+      }
+      else if(degree_Cnt[i]== n-1)
+      {
+        root_connected++;
+      }
+    }
+    // Check kore pai  /
+    if(root_connected == 1 and ekbar==n-1)
+    {
+      cout<<star<<endl;
+    }
+    else if(root_connected==2 and duibar==2)
+    {
+      cout<<ring<<endl;
+    }
+    else if(ekbar==2 and duibar==n-2 )
+    {
+      cout<<bus<<endl;
+    }
+    else{
+      cout<<"unknown topology"<<endl;
+    }
+  
   checkmate
 }
