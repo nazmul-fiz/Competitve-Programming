@@ -98,6 +98,7 @@ const int   big= 1e6;
  //..................................Let's Start with the Grace of Almighty.......................................///
  
 // problem Link- https://codeforces.com/contest/292/problem/B    //
+
 e4{
 
     ll n,m;
@@ -143,7 +144,7 @@ e4{
     {
       cout<<star<<endl;
     }
-    else if(root_connected==2 and duibar==2)
+    else if(duibar==n)  // Sob gula n jodi Duibar hoy  //
     {
       cout<<ring<<endl;
     }
