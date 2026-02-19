@@ -13,7 +13,7 @@ void A::fun() // here we define the function
   cout<<"Enter the two number: ";
   cin>>num1>>num2;
 }
-void A calculate()
+void A:: calculate()
 {
  int result= num1+num2;
  cout<<"The sum of the two number = "<< result;
