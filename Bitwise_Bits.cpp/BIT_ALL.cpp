@@ -2,14 +2,7 @@
 using namespace std;
 
 // Binary Conversion //
-void Printing_Binary(int num)
-{
-    for(int i=10; i>=0; --i)
-    {
-        cout<<((num >> i) & 1);
-    }
-    cout<<endl;
-}
+
 // Set bit Counting //
 cout<< __builtin_popcount(a)<<endl;    //For Integer 
 cout<< __builtin_popcountll((1LL <<35)-1); // For long long 

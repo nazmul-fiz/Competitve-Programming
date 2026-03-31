@@ -50,7 +50,7 @@ Printing_Binary( a &(~(1 << 3 )) );
  Printing_Binary(a ^ (1 <<2));  // the 2nd bit flipped
  Printing_Binary(a ^ (1<<3));  // the 3rd bit flipped
 
- ///Bit Counting, how many are set// 
+ // Bit Counting, how many are set //
  int cnt=0;
 for(int i=31; i>=0; --i)
 {
@@ -61,7 +61,7 @@ for(int i=31; i>=0; --i)
 }
 cout<<cnt<<endl;
 
-// other is Build in function like __builtin_popcount(a)//
+// other is Build in function like __builtin_popcount(a) //
 
 cout<< __builtin_popcount(a)<<endl;    // this is For Integer 
 
